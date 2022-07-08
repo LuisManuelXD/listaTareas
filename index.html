@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="icon" href="./img/tareas.png">
+  </head>
+  
+  <body style="background-color: rgb(175, 172, 172);">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary container-fluid p-3">
+            <a href="#" class="navbar-brand" id="titulo">Lista de tareas</a>
+            <img src="./img/tareas.png" alt="tareas.png" width="40">
+        </nav>
+    </header>
+
+    <div class="container bg-dark p-3 mt-5 mb-lg-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="formularioTareas" method="post">
+                            <input type="hidden" id="tareaId" name="tareaId">
+                            <div class="form-group">
+                                <label for="txtNombre"><h4>Nombre</h4></label>
+                                <input type="text"
+                                    id="txtNombre"
+                                    name="txtNombre"
+                                    placeholder="Nombre de la tarea"
+                                    class="form-control shadow"
+                                    title="Ingrese un nombre para la tarea."
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDescripcion" class="form-label"><h4 class="pt-4">Descripcion</h4></label>
+                                <textarea id="txtDescripcion"
+                                    name="txtDescripcion"
+                                    cols="30" rows="10"
+                                    class="form-control shadow"
+                                    title="Ingrese una descripción de la tarea a realizar."
+                                    placeholder="Escribe tu descripción" 
+                                    required></textarea>
+                            </div>
+                            <br>
+                            <input type="submit" value="Guardar tarea" class="btn btn-success btn-block text-center" title="Guarda la tarea con el contenido que ingreses en los campos de texto anteriores.">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 pt-4">
+                <h4 class="text-center text-white fw-bold">Tareas por completar</h4>
+                <table class="table table-bordered table-sm table-light text-center shadow">
+                    <thead class="table table-danger">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Realizada</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tareasFaltantes" name="tareasFaltantes"></tbody>
+                </table>
+            </div>
+
+            <div class="cool-md-7 pt-2">
+                <h4 class="text-center text-white fw-bold">Tareas finalizadas</h4>
+                <table class="table table-bordered table-sm table-light text-center shadow">
+                    <thead class="table table-success">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Realizada</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tareasFinalizadas"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="card card-footer bg-dark pt-4 mt-5">
+        <p><h5 class="text-light">Autor: Luis Manuel Rios<br>Copyright 2022</h5></p>
+    </footer>
+  </body>
+
+  <script src="./App.js"></script>
+</html>
